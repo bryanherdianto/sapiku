@@ -5,7 +5,7 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       {/* Header */}
       <header className="bg-white shadow-sm sticky top-0 z-50">
-        <div className="container mx-auto px-4 lg:px-40 py-4 flex justify-between items-center">
+        <div className="container mx-auto px-5 py-4 flex justify-between items-center">
           <div className="flex items-center">
             <Image
               src="/header-logo.svg"
@@ -17,8 +17,8 @@ export default function Home() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
-            <a href="#" className="text-black font-medium hover:text-orange-500 transition-colors">Home</a>
+          <nav className="hidden md:flex items-center space-x-8">
+            <a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">Home</a>
             <a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">Belanja</a>
             <a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">Tentang</a>
             <a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">Blog</a>
@@ -26,7 +26,7 @@ export default function Home() {
           </nav>
 
           {/* Mobile Menu Button */}
-          <button className="lg:hidden">
+          <button className="md:hidden">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
@@ -35,63 +35,63 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 lg:px-40 pt-16">
-        <div className="bg-[#cccccc] rounded-2xl p-8 lg:p-16 text-white relative overflow-hidden">
+      <section className="container mx-auto px-5 pt-8">
+        <div className="bg-[#cccccc] rounded-2xl p-4 lg:p-16 text-white relative overflow-hidden">
           <div className="flex flex-col lg:flex-row items-center justify-between">
-            <div className="lg:w-1/2 mb-8 lg:mb-0">
-              <div className="mb-8">
+            <div className="w-full mb-8 lg:mb-0">
+              <h1 className="text-sm sm:text-lg font-medium text-black mb-2 mt-20 text-center lg:text-left font-poppins relative z-10">
+                Pusat Daging Murah Jakarta
+              </h1>
+              <h2 className="text-2xl sm:text-4xl lg:text-7xl font-bold text-black mb-2 text-center lg:text-left font-poppins relative z-10">
+                Aneka Daging
+              </h2>
+              <p className="text-3xl sm:text-7xl lg:text-8xl xl:text-9xl font-black text-white mb-4 text-center lg:text-left font-montserrat relative z-10">
+                SEGAR/FRESH
+              </p>
+              <div className="relative lg:absolute lg:top-20 xl:top-3 lg:right-0 z-0 mb-8">
                 <Image
                   src="/sapiku-logo.png"
                   alt="SapiKu HD"
                   width={400}
-                  height={200}
-                  className="w-full max-w-md mx-auto lg:mx-0"
+                  height={400}
+                  className="w-156 xl:w-192 h-auto"
                 />
               </div>
-              <h1 className="text-md sm:text-2xl lg:text-4xl font-medium text-black mb-4 text-center lg:text-left">
-                Pusat Daging Murah Jakarta
-              </h1>
-              <h2 className="text-4xl lg:text-6xl font-bold text-black mb-8 text-center lg:text-left">
-                Aneka Daging
-              </h2>
-              <p className="text-4xl sm:text-6xl lg:text-8xl font-black text-white mb-8 text-center lg:text-left">
-                Segar/Fresh
-              </p>
-              <div className="text-center lg:text-left">
+              <div className="text-center lg:text-left mb-10 lg:mb-20">
                 <button className="bg-orange-500 text-white px-8 py-3 rounded-full hover:bg-orange-600 transition-colors">
                   Pesan Sekarang
                 </button>
               </div>
-            </div>
-            <div className="lg:w-1/2 text-right hidden lg:block">
-              <h3 className="text-xl font-bold text-black mb-4">SapiKu</h3>
-              <p className="text-gray-600 text-base leading-relaxed">
-                Kami menyediakan beragam aneka daging, mulai dari<br />
-                Daging Segar, Daging Beku, Daging Slice, Daging BBQ,<br />
-                Jeroan, Tetelan, Iga, dan produk penunjang lainnya.
-              </p>
+              <div className="justify-end text-right hidden lg:block">
+                <h3 className="text-xl font-bold text-black mb-4">SapiKu</h3>
+                <p className="text-gray-600 text-base leading-relaxed">
+                  Kami menyediakan beragam aneka daging, mulai dari<br />
+                  Daging Segar, Daging Beku, Daging Slice, Daging BBQ,<br />
+                  Jeroan, Tetelan, Iga, dan produk penunjang lainnya.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Product Categories */}
-      <section className="container mx-auto px-4 lg:px-40 py-16">
+      <section className="container mx-auto px-5 pt-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Daging Beku */}
           <div className="bg-green-500 rounded-3xl p-8 text-white relative overflow-hidden">
             <div className="mb-8">
-              <h3 className="text-lg font-normal mb-2">Aneka</h3>
-              <h4 className="text-3xl font-semibold mb-2">Daging</h4>
-              <p className="text-3xl sm:text-4xl font-black">BEKU/FROZEN</p>
+              <h3 className="text-lg font-normal">Aneka</h3>
+              <h4 className="text-3xl font-semibold">Daging</h4>
+              <p className="text-3xl sm:text-3xl font-black font-montserrat">BEKU/FROZEN</p>
             </div>
-            <div className="mb-8">
+            <div className="mb-2">
               <Image
                 src="/daging-beku.png"
                 alt="Daging Beku"
                 width={300}
                 height={200}
-                className="w-full h-48 object-cover rounded-lg"
+                className="w-full"
               />
             </div>
             <button className="bg-gray-800 text-white px-6 py-2 rounded-full text-sm hover:bg-gray-700 transition-colors">
@@ -102,17 +102,17 @@ export default function Home() {
           {/* Jeroan & Tetelan */}
           <div className="bg-orange-500 rounded-3xl p-8 text-white relative overflow-hidden">
             <div className="mb-8">
-              <h3 className="text-lg font-normal mb-2">Aneka</h3>
-              <h4 className="text-3xl font-semibold mb-2">Jeroan &</h4>
-              <p className="text-4xl font-black text-gray-100">TETELAN</p>
+              <h3 className="text-lg font-normal">Aneka</h3>
+              <h4 className="text-3xl font-semibold">Jeroan &</h4>
+              <p className="text-4xl font-black text-white font-montserrat">TETELAN</p>
             </div>
-            <div className="mb-8">
+            <div className="mb-2">
               <Image
                 src="/jeroan-tetelan.png"
                 alt="Jeroan & Tetelan"
                 width={300}
                 height={200}
-                className="w-full h-56 object-cover rounded-lg"
+                className="w-full"
               />
             </div>
             <button className="bg-gray-800 text-gray-200 px-6 py-2 rounded-full text-sm hover:bg-gray-700 transition-colors">
@@ -121,7 +121,7 @@ export default function Home() {
           </div>
 
           {/* Tulang Iga */}
-          <div className="bg-gray-200 rounded-3xl p-8 text-black relative overflow-hidden lg:col-span-1">
+          <div className="bg-[#cccccc] rounded-3xl p-8 text-black relative overflow-hidden lg:col-span-1">
             <div className="flex flex-col h-full">
               <div className="mb-8">
                 <Image
@@ -129,13 +129,13 @@ export default function Home() {
                   alt="Tulang Iga"
                   width={400}
                   height={300}
-                  className="w-full h-64 object-cover rounded-lg"
+                  className="w-full"
                 />
               </div>
               <div className="mt-auto">
-                <h3 className="text-lg font-normal mb-2">Aneka</h3>
-                <h4 className="text-3xl font-semibold mb-2">Tulang Iga &</h4>
-                <p className="text-4xl font-black text-white mb-6">TULANG SOP</p>
+                <h3 className="text-lg font-normal">Aneka</h3>
+                <h4 className="text-3xl font-semibold">Tulang Iga &</h4>
+                <p className="text-4xl font-black text-white mb-6 font-montserrat">TULANG SOP</p>
                 <button className="bg-orange-500 text-white px-6 py-2 rounded-full text-sm hover:bg-orange-600 transition-colors">
                   Telusuri
                 </button>
@@ -147,19 +147,19 @@ export default function Home() {
         {/* Second Row */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mt-8">
           {/* Produk Penunjang */}
-          <div className="bg-gray-200 rounded-2xl p-6 text-black">
+          <div className="bg-[#cccccc] rounded-2xl p-6 text-black">
             <div className="mb-6">
               <Image
                 src="/produk-penunjang.png"
                 alt="Produk Penunjang"
                 width={250}
                 height={180}
-                className="w-full h-32 object-cover rounded-lg"
+                className="w-full"
               />
             </div>
-            <h3 className="text-lg font-medium mb-1">Aneka</h3>
-            <h4 className="text-2xl font-bold mb-1">Produk</h4>
-            <p className="text-3xl font-black text-white mb-4">PENUNJANG</p>
+            <h3 className="text-lg font-medium">Aneka</h3>
+            <h4 className="text-2xl font-bold">Produk</h4>
+            <p className="text-2xl font-black text-white mb-4 font-montserrat">PENUNJANG</p>
             <button className="bg-orange-500 text-white px-6 py-2 rounded-full text-sm hover:bg-orange-600 transition-colors">
               Telusuri
             </button>
@@ -173,12 +173,12 @@ export default function Home() {
                 alt="Daging Slice"
                 width={250}
                 height={180}
-                className="w-full h-42 object-cover rounded-lg"
+                className="w-full"
               />
             </div>
-            <h3 className="text-lg font-normal mb-1">Aneka</h3>
-            <h4 className="text-2xl font-semibold mb-1">Daging</h4>
-            <p className="text-3xl font-black mb-4">SLICE</p>
+            <h3 className="text-lg font-normal">Aneka</h3>
+            <h4 className="text-2xl font-semibold">Daging</h4>
+            <p className="text-3xl font-black mb-4 font-montserrat">SLICE</p>
             <button className="bg-gray-800 text-white px-6 py-2 rounded-full text-sm hover:bg-gray-700 transition-colors">
               Telusuri
             </button>
@@ -188,9 +188,9 @@ export default function Home() {
           <div className="bg-orange-500 rounded-3xl p-6 text-white lg:col-span-2">
             <div className="flex flex-col lg:flex-row items-center">
               <div className="lg:w-1/2 mb-6 lg:mb-0">
-                <h3 className="text-lg font-medium mb-2">Aneka</h3>
-                <h4 className="text-2xl font-semibold mb-2">Daging</h4>
-                <p className="text-3xl font-black mb-6">BBQ/STEAK</p>
+                <h3 className="text-lg font-medium">Aneka</h3>
+                <h4 className="text-2xl font-semibold">Daging</h4>
+                <p className="text-3xl font-black mb-6 font-montserrat">BBQ/STEAK</p>
                 <button className="bg-gray-800 text-white px-6 py-2 rounded-full text-sm hover:bg-gray-700 transition-colors">
                   Telusuri
                 </button>
@@ -201,7 +201,7 @@ export default function Home() {
                   alt="Daging BBQ/Steak"
                   width={300}
                   height={300}
-                  className="w-full h-48 lg:h-64 object-cover rounded-lg"
+                  className="w-full"
                 />
               </div>
             </div>
@@ -210,7 +210,7 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="container mx-auto px-4 lg:px-40 py-16">
+      <section className="container mx-auto px-5 py-16">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-black mb-4">Kenapa Memilih Kami?</h2>
           <p className="text-gray-600">Lihat berbagai keunggulan yang kami tawarkan!</p>
@@ -284,15 +284,15 @@ export default function Home() {
       </section>
 
       {/* Promo Section */}
-      <section className="container mx-auto px-4 lg:px-40 py-16">
+      <section className="container mx-auto px-5 py-16">
         <div className="bg-green-500 rounded-2xl p-8 lg:p-16 text-white relative overflow-hidden">
           <div className="flex flex-col lg:flex-row items-center justify-between">
             <div className="lg:w-1/2 mb-8 lg:mb-0">
-              <h2 className="text-2xl lg:text-3xl font-bold mb-4">Discount 5%</h2>
-              <h3 className="text-4xl lg:text-6xl font-black mb-4 leading-tight">
-                Daging<br />Rendang<br />& Semur
+              <h2 className="text-2xl lg:text-3xl font-bold mb-4 text-center font-montserrat">Discount 5%</h2>
+              <h3 className="text-4xl lg:text-6xl font-black mb-4 leading-tight text-center font-montserrat">
+                DAGING RENDANG<br />& SEMUR
               </h3>
-              <p className="text-lg font-semibold mb-8">9 Nov to 31 Dec</p>
+              <p className="text-lg font-semibold mb-8 text-center font-montserrat">9 Nov to 31 Dec</p>
             </div>
             <div className="lg:w-1/2 text-center lg:text-right">
               <div className="mb-8">
@@ -319,7 +319,7 @@ export default function Home() {
       </section>
 
       {/* Products Section */}
-      <section className="container mx-auto px-4 lg:px-40 py-16">
+      <section className="container mx-auto px-5 py-16">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-black mb-4">Produk Terbaik Kami</h2>
           <p className="text-gray-600">Pilih produk-produk terbaik yang kami tawarkan!</p>
@@ -529,12 +529,22 @@ export default function Home() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="container mx-auto px-4 lg:px-40 py-16">
+      <section className="container mx-auto px-5 py-16">
         <div className="bg-orange-500 rounded-2xl p-8 lg:p-16 text-white text-center relative overflow-hidden">
           <div className="relative z-10">
-            <h2 className="text-2xl lg:text-3xl font-bold mb-4">Gratis 100%</h2>
-            <h3 className="text-4xl lg:text-5xl font-black mb-4">Ongkos Kirim</h3>
-            <p className="text-lg font-light mb-8">*Syarat & Ketentuan Berlaku</p>
+            <h2 className="text-2xl lg:text-3xl font-bold mb-4 font-montserrat">Gratis 100%</h2>
+            <h3 className="text-4xl lg:text-5xl font-black mb-4 font-montserrat">ONGKOS KIRIM</h3>
+            <p className="text-lg font-light mb-8 font-montserrat">*Syarat & Ketentuan Berlaku</p>
+
+            <div className="w-100 h-100 mb-8 mx-auto">
+            <Image
+              src="/hero-bg.png"
+              alt="Background"
+              width={300}
+              height={300}
+              className="w-full h-full"
+            />
+          </div>
 
             <div className="mb-8">
               <h4 className="text-lg font-medium mb-2">Untuk Para Pelanggan Kami</h4>
@@ -549,21 +559,11 @@ export default function Home() {
               Pesan Sekarang
             </button>
           </div>
-
-          <div className="absolute top-10 right-10 w-100 h-100">
-            <Image
-              src="/hero-bg.png"
-              alt="Background"
-              width={300}
-              height={300}
-              className="w-full h-full"
-            />
-          </div>
         </div>
       </section>
 
       {/* Blog Section */}
-      <section className="container mx-auto px-4 lg:px-40 py-16">
+      <section className="container mx-auto px-5 py-16">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-black mb-4">Berita Update</h2>
           <p className="text-gray-600">Cermati artikel-artikel seputar peternakan sapi dan dunia daging!</p>
@@ -644,7 +644,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="bg-white border-t border-gray-200">
-        <div className="container mx-auto px-4 lg:px-40 py-16">
+        <div className="container mx-auto px-5 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-8">
             {/* Company Info */}
             <div className="lg:col-span-1">
@@ -717,7 +717,7 @@ export default function Home() {
             {/* Location */}
             <div>
               <h4 className="text-lg font-bold text-black mb-4">Lokasi</h4>
-              <p className="text-gray-600 text-sm leading-relaxed mb-6">
+              <p className="text-gray-600 text-sm leading-relaxed">
                 Gg. Swadaya 3 No.90, RT 003 / RW 006,<br />
                 Kel. Srengseng Sawah, Kec. Jagakarsa,<br />
                 Kota Jakarta Selatan, DKI Jakarta 12640

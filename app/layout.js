@@ -14,10 +14,10 @@ const montserrat = Montserrat({
 });
 
 export const metadata = {
-  title: "SapiKu.id – Pusat Daging Murah Jakarta",
-  description: "SapiKu.id adalah pusat daging sapi murah dan berkualitas di Jakarta, menyediakan daging segar, beku, hingga produk peternakan untuk kebutuhan harian dan hari besar Anda.",
+  title: "SapiKu – Pusat Daging Murah Jakarta",
+  description: "SapiKu adalah pusat daging sapi murah dan berkualitas di Jakarta, menyediakan daging segar, beku, hingga produk peternakan untuk kebutuhan harian dan hari besar Anda.",
   keywords: "daging sapi, daging murah, pusat daging jakarta, daging segar, daging beku, jeroan, tetelan, tulang iga, sapiku",
-  author: "SapiKu.id",
+  author: "SapiKu",
   viewport: "width=device-width, initial-scale=1"
 };
 

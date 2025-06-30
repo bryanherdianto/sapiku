@@ -15,7 +15,7 @@ export default function Home() {
               className="h-10 w-auto"
             />
           </div>
-          
+
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
             <a href="#" className="text-black font-medium hover:text-orange-500 transition-colors">Home</a>
@@ -35,8 +35,8 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gray-200 rounded-3xl mx-4 lg:mx-40 my-8 lg:my-6 overflow-hidden">
-        <div className="container mx-auto px-8 lg:px-36 py-16 lg:py-32">
+      <section className="container mx-auto px-4 lg:px-40 pt-16">
+        <div className="bg-[#cccccc] rounded-2xl p-8 lg:p-16 text-white relative overflow-hidden">
           <div className="flex flex-col lg:flex-row items-center justify-between">
             <div className="lg:w-1/2 mb-8 lg:mb-0">
               <div className="mb-8">
@@ -48,13 +48,13 @@ export default function Home() {
                   className="w-full max-w-md mx-auto lg:mx-0"
                 />
               </div>
-              <h1 className="text-2xl lg:text-4xl font-medium text-black mb-4 text-center lg:text-left">
+              <h1 className="text-md sm:text-2xl lg:text-4xl font-medium text-black mb-4 text-center lg:text-left">
                 Pusat Daging Murah Jakarta
               </h1>
-              <h2 className="text-4xl lg:text-6xl font-bold text-black mb-4 text-center lg:text-left">
+              <h2 className="text-4xl lg:text-6xl font-bold text-black mb-8 text-center lg:text-left">
                 Aneka Daging
               </h2>
-              <p className="text-6xl lg:text-8xl font-black text-gray-100 mb-8 text-center lg:text-left">
+              <p className="text-4xl sm:text-6xl lg:text-8xl font-black text-white mb-8 text-center lg:text-left">
                 Segar/Fresh
               </p>
               <div className="text-center lg:text-left">
@@ -83,7 +83,7 @@ export default function Home() {
             <div className="mb-8">
               <h3 className="text-lg font-normal mb-2">Aneka</h3>
               <h4 className="text-3xl font-semibold mb-2">Daging</h4>
-              <p className="text-4xl font-black">BEKU/FROZEN</p>
+              <p className="text-3xl sm:text-4xl font-black">BEKU/FROZEN</p>
             </div>
             <div className="mb-8">
               <Image
@@ -112,7 +112,7 @@ export default function Home() {
                 alt="Jeroan & Tetelan"
                 width={300}
                 height={200}
-                className="w-full h-48 object-cover rounded-lg"
+                className="w-full h-56 object-cover rounded-lg"
               />
             </div>
             <button className="bg-gray-800 text-gray-200 px-6 py-2 rounded-full text-sm hover:bg-gray-700 transition-colors">
@@ -173,7 +173,7 @@ export default function Home() {
                 alt="Daging Slice"
                 width={250}
                 height={180}
-                className="w-full h-32 object-cover rounded-lg"
+                className="w-full h-42 object-cover rounded-lg"
               />
             </div>
             <h3 className="text-lg font-normal mb-1">Aneka</h3>
@@ -211,6 +211,11 @@ export default function Home() {
 
       {/* Features Section */}
       <section className="container mx-auto px-4 lg:px-40 py-16">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl lg:text-4xl font-bold text-black mb-4">Kenapa Memilih Kami?</h2>
+          <p className="text-gray-600">Lihat berbagai keunggulan yang kami tawarkan!</p>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="text-center">
             <div className="mb-4 flex justify-center">
@@ -285,7 +290,7 @@ export default function Home() {
             <div className="lg:w-1/2 mb-8 lg:mb-0">
               <h2 className="text-2xl lg:text-3xl font-bold mb-4">Discount 5%</h2>
               <h3 className="text-4xl lg:text-6xl font-black mb-4 leading-tight">
-                Daging<br />rendang<br />& semur
+                Daging<br />Rendang<br />& Semur
               </h3>
               <p className="text-lg font-semibold mb-8">9 Nov to 31 Dec</p>
             </div>
@@ -409,63 +414,150 @@ export default function Home() {
             </div>
           </div>
 
-          {/* More products in mobile view */}
-          <div className="lg:hidden space-y-8">
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-              <Image
-                src="/product-5.png"
-                alt="Daging Sliced Meat Teriyaki Fat 500 g"
-                width={300}
-                height={200}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-4">
-                <h3 className="text-lg font-normal text-black mb-2">Daging Sliced Meat Teriyaki Fat 500 g</h3>
-                <span className="text-black font-bold">Rp67.000</span>
-              </div>
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+            <Image
+              src="/product-5.png"
+              alt="Daging Sliced Meat Teriyaki Fat 500 g"
+              width={300}
+              height={200}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-4">
+              <h3 className="text-lg font-normal text-black mb-2">Daging Sliced Meat Teriyaki Fat 500 g</h3>
+              <span className="text-black font-bold">Rp67.000</span>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+            <Image
+              src="/product-6.png"
+              alt="Tulangan Iga Sop Super 1 kg"
+              width={300}
+              height={200}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-4">
+              <h3 className="text-lg font-normal text-black mb-2">Tulangan Iga Sop Super 1 kg</h3>
+              <span className="text-black font-bold">Rp90.000</span>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+            <Image
+              src="/product-7.png"
+              alt="Tulangan Iga Shortrib 1 kg (Konro Bakar)"
+              width={300}
+              height={200}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-4">
+              <h3 className="text-lg font-normal text-black mb-2">Tulangan Iga Shortrib 1 kg (Konro Bakar)</h3>
+              <span className="text-black font-bold">Rp120.000</span>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+            <Image
+              src="/product-8.png"
+              alt="Hati Sapi 1 kg"
+              width={300}
+              height={200}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-4">
+              <h3 className="text-lg font-normal text-black mb-2">Hati Sapi 1 kg</h3>
+              <span className="text-black font-bold">Rp50.000</span>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+            <Image
+              src="/product-9.png"
+              alt="Varian Saus My Taste"
+              width={300}
+              height={200}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-4">
+              <h3 className="text-lg font-normal text-black mb-2">Varian Saus My Taste</h3>
+              <span className="text-black font-bold">Rp23.000</span>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+            <Image
+              src="/product-10.png"
+              alt="Varian Saus Kikkoman"
+              width={300}
+              height={200}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-4">
+              <h3 className="text-lg font-normal text-black mb-2">Varian Saus Kikkoman</h3>
+              <span className="text-black font-bold">Rp28.000</span>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+            <Image
+              src="/product-11.png"
+              alt="Udang Fresh 500 g"
+              width={300}
+              height={200}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-4">
+              <h3 className="text-lg font-normal text-black mb-2">Udang Fresh 500 g</h3>
+              <span className="text-black font-bold">Rp55.000</span>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+            <Image
+              src="/product-12.png"
+              alt="Cumi Ring 500 g"
+              width={300}
+              height={200}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-4">
+              <h3 className="text-lg font-normal text-black mb-2">Cumi Ring 500 g</h3>
+              <span className="text-black font-bold">Rp50.000</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA Section */}
+      <section className="container mx-auto px-4 lg:px-40 py-16">
+        <div className="bg-orange-500 rounded-2xl p-8 lg:p-16 text-white text-center relative overflow-hidden">
+          <div className="relative z-10">
+            <h2 className="text-2xl lg:text-3xl font-bold mb-4">Gratis 100%</h2>
+            <h3 className="text-4xl lg:text-5xl font-black mb-4">Ongkos Kirim</h3>
+            <p className="text-lg font-light mb-8">*Syarat & Ketentuan Berlaku</p>
+
+            <div className="mb-8">
+              <h4 className="text-lg font-medium mb-2">Untuk Para Pelanggan Kami</h4>
+              <h5 className="text-3xl font-bold mb-4">Pesta Akhir Tahun</h5>
+              <p className="text-base mb-6 max-w-2xl mx-auto">
+                Buat momen akhir tahun kamu dan keluarga menjadi lebih bermakna bersama
+                SapiKu, Pusat Daging Murah Jakarta
+              </p>
             </div>
 
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-              <Image
-                src="/product-6.png"
-                alt="Tulangan Iga Sop Super 1 kg"
-                width={300}
-                height={200}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-4">
-                <h3 className="text-lg font-normal text-black mb-2">Tulangan Iga Sop Super 1 kg</h3>
-                <span className="text-black font-bold">Rp90.000</span>
-              </div>
-            </div>
+            <button className="bg-white text-red-500 px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors">
+              Pesan Sekarang
+            </button>
+          </div>
 
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-              <Image
-                src="/product-7.png"
-                alt="Tulangan Iga Shortrib 1 kg (Konro Bakar)"
-                width={300}
-                height={200}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-4">
-                <h3 className="text-lg font-normal text-black mb-2">Tulangan Iga Shortrib 1 kg (Konro Bakar)</h3>
-                <span className="text-black font-bold">Rp120.000</span>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-              <Image
-                src="/product-8.png"
-                alt="Hati Sapi 1 kg"
-                width={300}
-                height={200}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-4">
-                <h3 className="text-lg font-normal text-black mb-2">Hati Sapi 1 kg</h3>
-                <span className="text-black font-bold">Rp50.000</span>
-              </div>
-            </div>
+          <div className="absolute top-10 right-10 w-100 h-100">
+            <Image
+              src="/hero-bg.png"
+              alt="Background"
+              width={300}
+              height={300}
+              className="w-full h-full"
+            />
           </div>
         </div>
       </section>
@@ -478,17 +570,6 @@ export default function Home() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Featured Article */}
-          <div className="lg:col-span-2 bg-gray-200 rounded-2xl overflow-hidden">
-            <Image
-              src="/blog-1.png"
-              alt="Teknologi Peternakan Sapi"
-              width={600}
-              height={300}
-              className="w-full h-64 object-cover"
-            />
-          </div>
-
           {/* Article 1 */}
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
             <Image
@@ -525,68 +606,38 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Mobile Articles */}
-          <div className="lg:hidden space-y-8">
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-              <Image
-                src="/blog-3.png"
-                alt="Tren Konsumsi Daging Sapi"
-                width={400}
-                height={250}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-black mb-4">Tren Konsumsi Daging Sapi di Indonesia: Lokal vs Impor</h3>
-                <p className="text-gray-600 mb-4">
-                  Permintaan daging sapi terus meningkat, tetapi Indonesia masih mengandalkan impor. Artikel ini mengulas data konsumsi...
-                </p>
-                <a href="#" className="text-orange-500 font-medium hover:underline">Read more →</a>
-              </div>
-            </div>
-
-            <div className="bg-black rounded-2xl overflow-hidden">
-              <div className="p-8 text-white">
-                <h3 className="text-3xl font-bold mb-4">Sapi Ramah Lingkungan</h3>
-                <p className="text-gray-300 mb-6">
-                  Peternakan sapi sering dikaitkan dengan emisi gas rumah kaca, namun pendekatan berkelanjutan seperti rotasi...
-                </p>
-                <a href="#" className="text-white font-medium hover:underline">Read more →</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA Section */}
-      <section className="container mx-auto px-4 lg:px-40 py-16">
-        <div className="bg-orange-500 rounded-2xl p-8 lg:p-16 text-white text-center relative overflow-hidden">
-          <div className="relative z-10">
-            <h2 className="text-2xl lg:text-3xl font-bold mb-4">Gratis 100%</h2>
-            <h3 className="text-4xl lg:text-5xl font-black mb-4">ongkos kirim</h3>
-            <p className="text-lg font-light mb-8">*Syarat & Ketentuan Berlaku</p>
-            
-            <div className="mb-8">
-              <h4 className="text-lg font-medium mb-2">Untuk Para Pelanggan Kami</h4>
-              <h5 className="text-3xl font-bold mb-4">Pesta Akhir Tahun</h5>
-              <p className="text-base mb-6 max-w-2xl mx-auto">
-                Buat momen akhir tahun kamu dan keluarga menjadi lebih bermakna bersama
-                SapiKu, Pusat Daging Murah Jakarta
-              </p>
-            </div>
-            
-            <button className="bg-white text-red-500 px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors">
-              Pesan Sekarang
-            </button>
-          </div>
-          
-          <div className="absolute top-0 right-0 w-64 h-64 opacity-20">
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
             <Image
-              src="/hero-bg.png"
-              alt="Background"
-              width={300}
-              height={300}
-              className="w-full h-full object-cover"
+              src="/blog-3.png"
+              alt="Tren Konsumsi Daging Sapi"
+              width={400}
+              height={250}
+              className="w-full h-48 object-cover"
             />
+            <div className="p-6">
+              <h3 className="text-xl font-bold text-black mb-4">Tren Konsumsi Daging Sapi di Indonesia: Lokal vs Impor</h3>
+              <p className="text-gray-600 mb-4">
+                Permintaan daging sapi terus meningkat, tetapi Indonesia masih mengandalkan impor. Artikel ini mengulas data konsumsi...
+              </p>
+              <a href="#" className="text-orange-500 font-medium hover:underline">Read more →</a>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+            <Image
+              src="/blog-4.png"
+              alt="Sapi Ramah Lingkungan"
+              width={400}
+              height={250}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-8 text-black">
+              <h3 className="text-3xl font-bold mb-4">Sapi Ramah Lingkungan</h3>
+              <p className="text-gray-600 mb-6">
+                Peternakan sapi sering dikaitkan dengan emisi gas rumah kaca, namun pendekatan berkelanjutan seperti rotasi...
+              </p>
+              <a href="#" className="text-orange-500 font-medium hover:underline">Read more →</a>
+            </div>
           </div>
         </div>
       </section>
@@ -610,13 +661,45 @@ export default function Home() {
               <p className="text-gray-600 text-sm leading-relaxed mb-6">
                 Sapiku.id adalah pusat daging sapi murah dan berkualitas di Jakarta, menyediakan daging segar, beku, hingga produk peternakan untuk kebutuhan harian dan hari besar Anda.
               </p>
-              
+
               {/* Social Media */}
               <div className="flex space-x-4">
-                <a href="#" className="w-6 h-6 bg-gray-200 rounded"></a>
-                <a href="#" className="w-6 h-6 bg-gray-200 rounded"></a>
-                <a href="#" className="w-6 h-6 bg-gray-200 rounded"></a>
-                <a href="#" className="w-6 h-6 bg-gray-200 rounded"></a>
+                <a href="#" className="hover:opacity-80 transition-opacity">
+                  <Image
+                    src="/footer_icons/instagram.svg"
+                    alt="Instagram"
+                    width={24}
+                    height={24}
+                    className="w-6 h-6"
+                  />
+                </a>
+                <a href="#" className="hover:opacity-80 transition-opacity">
+                  <Image
+                    src="/footer_icons/linkedin.svg"
+                    alt="LinkedIn"
+                    width={24}
+                    height={24}
+                    className="w-6 h-6"
+                  />
+                </a>
+                <a href="#" className="hover:opacity-80 transition-opacity">
+                  <Image
+                    src="/footer_icons/facebook.svg"
+                    alt="Facebook"
+                    width={24}
+                    height={24}
+                    className="w-6 h-6"
+                  />
+                </a>
+                <a href="#" className="hover:opacity-80 transition-opacity">
+                  <Image
+                    src="/footer_icons/twitter.svg"
+                    alt="Twitter"
+                    width={24}
+                    height={24}
+                    className="w-6 h-6"
+                  />
+                </a>
               </div>
             </div>
 
@@ -644,23 +727,41 @@ export default function Home() {
             {/* Contact */}
             <div>
               <h4 className="text-lg font-bold text-black mb-4">Contacts</h4>
-              <div className="space-y-2">
-                <p className="text-gray-600 text-sm">+62 822 9869 6842</p>
-                <p className="text-gray-600 text-sm">admin@sapiku.id</p>
+              <div className="space-y-3">
+                <div className="flex items-center space-x-3">
+                  <Image
+                    src="/footer_icons/phone.svg"
+                    alt="Phone"
+                    width={20}
+                    height={20}
+                    className="w-5 h-5"
+                  />
+                  <p className="text-gray-600 text-sm">+62 822 9869 6842</p>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Image
+                    src="/footer_icons/mail.svg"
+                    alt="Mail"
+                    width={20}
+                    height={20}
+                    className="w-5 h-5"
+                  />
+                  <p className="text-gray-600 text-sm">admin@sapiku.id</p>
+                </div>
               </div>
             </div>
           </div>
-          
+
           <div className="border-t border-gray-200 pt-8 pb-4 flex flex-col lg:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm text-center lg:text-left mb-4 lg:mb-0">
               © 2025 Pusat Daging Murah. All Rights Reserved.
             </p>
-            
+
             {/* WhatsApp Button */}
             <div className="fixed bottom-6 right-6">
-              <a 
-                href="https://wa.me/6282298696842" 
-                target="_blank" 
+              <a
+                href="https://wa.me/6282298696842"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-colors flex items-center justify-center"
               >

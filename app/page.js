@@ -21,15 +21,15 @@ export default function Home() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">Home</a>
-            <a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">Belanja</a>
-            <a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">Tentang</a>
-            <a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">Blog</a>
-            <a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">Kontak</a>
+            <a href="#" className="text-gray-600 hover:text-[#E56F17] transition-colors">Home</a>
+            <a href="#" className="text-gray-600 hover:text-[#E56F17] transition-colors">Belanja</a>
+            <a href="#" className="text-gray-600 hover:text-[#E56F17] transition-colors">Tentang</a>
+            <a href="#" className="text-gray-600 hover:text-[#E56F17] transition-colors">Blog</a>
+            <a href="#" className="text-gray-600 hover:text-[#E56F17] transition-colors">Kontak</a>
             <SignedOut>
               <button
                 onClick={() => clerk.openSignIn({})}
-                className="bg-orange-500 text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-orange-600 transition-colors"
+                className="bg-[#E56F17] text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-[#e55817] transition-colors"
               >
                 Login
               </button>
@@ -44,7 +44,7 @@ export default function Home() {
             <SignedOut>
               <button
                 onClick={() => clerk.openSignIn({})}
-                className="bg-orange-500 text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-orange-600 transition-colors"
+                className="bg-[#E56F17] text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-[#e55817] transition-colors"
               >
                 Login
               </button>
@@ -77,13 +77,13 @@ export default function Home() {
                 <Image
                   src="/sapiku-logo.png"
                   alt="SapiKu HD"
-                  width={400}
-                  height={400}
+                  width={1000}
+                  height={1000}
                   className="w-156 xl:w-192 h-auto"
                 />
               </div>
               <div className="text-center lg:text-left mb-10">
-                <button className="bg-orange-500 text-white px-8 py-3 rounded-full hover:bg-orange-600 transition-colors">
+                <button className="bg-[#E56F17] text-white px-8 py-3 rounded-full hover:bg-[#e55817] transition-colors">
                   Pesan Sekarang
                 </button>
               </div>
@@ -104,7 +104,7 @@ export default function Home() {
       <section className="container mx-auto px-5 pt-8 pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Daging Beku */}
-          <div className="bg-green-500 rounded-3xl p-8 text-white relative flex flex-col sm:flex-row lg:block">
+          <div className="bg-[#71C454] rounded-3xl p-8 text-white relative flex flex-col sm:flex-row lg:block">
             <div>
               <div className="lg:mt-30">
                 <h3 className="text-lg font-normal relative z-10">Aneka</h3>
@@ -127,7 +127,7 @@ export default function Home() {
           </div>
 
           {/* Jeroan & Tetelan */}
-          <div className="bg-orange-500 rounded-3xl p-8 text-white relative flex flex-col sm:flex-row items-center justify-center lg:block">
+          <div className="bg-[#E56F17] rounded-3xl p-8 text-white relative flex flex-col sm:flex-row items-center justify-center lg:block">
             <div>
               <div className="lg:mt-30">
                 <h3 className="text-lg text-center sm:text-left font-normal relative z-10">Aneka</h3>
@@ -165,7 +165,7 @@ export default function Home() {
                 <h3 className="text-lg font-normal relative z-10">Aneka</h3>
                 <h4 className="text-3xl font-semibold relative z-10">Tulang Iga &</h4>
                 <p className="text-4xl font-black text-white mb-6 font-montserrat relative z-10">TULANG SOP</p>
-                <button className="bg-orange-500 text-white px-6 py-2 rounded-full text-sm hover:bg-orange-600 transition-colors">
+                <button className="bg-[#E56F17] text-white px-6 py-2 rounded-full text-sm hover:bg-[#e55817] transition-colors">
                   Telusuri
                 </button>
               </div>
@@ -181,7 +181,7 @@ export default function Home() {
               <h3 className="text-lg text-center sm:text-left font-medium relative z-10">Aneka</h3>
               <h4 className="text-2xl text-center sm:text-left font-bold relative z-10">Produk</h4>
               <p className="text-2xl text-center sm:text-left font-black text-white mb-4 font-montserrat relative z-10">PENUNJANG</p>
-              <button className="bg-orange-500 text-white px-6 py-2 rounded-full text-sm hover:bg-orange-600 transition-colors relative z-10 lg:mb-50 block mx-auto lg:mx-0">
+              <button className="bg-[#E56F17] text-white px-6 py-2 rounded-full text-sm hover:bg-[#e55817] transition-colors relative z-10 lg:mb-50 block mx-auto lg:mx-0">
                 Telusuri
               </button>
             </div>
@@ -197,7 +197,7 @@ export default function Home() {
           </div>
 
           {/* Daging Slice */}
-          <div className="bg-green-500 rounded-2xl p-6 text-white relative overflow-visible flex flex-col sm:flex-row items-center justify-center lg:block">
+          <div className="bg-[#71C454] rounded-2xl p-6 text-white relative overflow-visible flex flex-col sm:flex-row items-center justify-center lg:block">
             <div className="lg:absolute -bottom-5 xl:-bottom-15 lg:-right-15 z-0">
               <Image
                 src="/daging-slice.png"
@@ -218,7 +218,7 @@ export default function Home() {
           </div>
 
           {/* Daging BBQ/Steak */}
-          <div className="bg-orange-500 rounded-3xl p-6 text-white lg:col-span-2 overflow-visible relative">
+          <div className="bg-[#E56F17] rounded-3xl p-6 text-white lg:col-span-2 overflow-visible relative">
             <div className="flex flex-col lg:flex-row items-center">
               <div className="lg:w-1/2 mb-6 lg:mb-0 relative z-10 lg:mt-20">
                 <h3 className="text-lg text-center lg:text-left font-medium">Aneka</h3>
@@ -318,7 +318,7 @@ export default function Home() {
 
       {/* Promo Section */}
       <section className="container mx-auto px-5 py-16">
-        <div className="bg-green-500 rounded-2xl p-8 lg:p-16 text-white relative overflow-hidden">
+        <div className="bg-[#71C454] rounded-2xl p-8 lg:p-16 text-white relative overflow-hidden">
           <div className="flex flex-col lg:flex-row items-center justify-between">
             <div className="lg:w-[70%] mb-8 lg:mb-0 relative">
               <h2 className="text-2xl lg:text-3xl font-bold text-center lg:text-left font-montserrat relative z-10">Discount 5%</h2>
@@ -568,7 +568,7 @@ export default function Home() {
 
       {/* Final CTA Section */}
       <section className="container mx-auto px-5 py-16">
-        <div className="bg-orange-500 rounded-2xl p-8 lg:p-16 text-white relative overflow-hidden">
+        <div className="bg-[#E56F17] rounded-2xl p-8 lg:p-16 text-white relative overflow-hidden">
           <div className="flex flex-col lg:flex-row items-center justify-between">
             <div className="lg:w-1/3 mb-8 lg:mb-0">
               <h2 className="text-2xl lg:text-3xl font-bold text-center lg:text-left font-montserrat">Gratis 100%</h2>
@@ -623,7 +623,7 @@ export default function Home() {
               <p className="text-gray-600 mb-4">
                 Industri peternakan sapi kini memanfaatkan teknologi seperti sensor suhu tubuh, pemantauan GPS, dan kecerdasan buatan (AI)...
               </p>
-              <a href="#" className="text-orange-500 font-medium hover:underline">Read more →</a>
+              <a href="#" className="text-[#E56F17] font-medium hover:underline">Read more →</a>
             </div>
           </div>
 
@@ -641,7 +641,7 @@ export default function Home() {
               <p className="text-gray-600 mb-4">
                 Jenis dan kualitas pakan sangat memengaruhi rasa, tekstur, dan nilai gizi daging sapi. Artikel ini membahas pentingnya nutrisi...
               </p>
-              <a href="#" className="text-orange-500 font-medium hover:underline">Read more →</a>
+              <a href="#" className="text-[#E56F17] font-medium hover:underline">Read more →</a>
             </div>
           </div>
 
@@ -658,7 +658,7 @@ export default function Home() {
               <p className="text-gray-600 mb-4">
                 Permintaan daging sapi terus meningkat, tetapi Indonesia masih mengandalkan impor. Artikel ini mengulas data konsumsi...
               </p>
-              <a href="#" className="text-orange-500 font-medium hover:underline">Read more →</a>
+              <a href="#" className="text-[#E56F17] font-medium hover:underline">Read more →</a>
             </div>
           </div>
 
@@ -748,10 +748,10 @@ export default function Home() {
             <div>
               <h4 className="text-lg font-bold text-black mb-4">Links</h4>
               <ul className="space-y-3">
-                <li><a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">Belanja</a></li>
-                <li><a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">Tentang</a></li>
-                <li><a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">Blog</a></li>
-                <li><a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">Kontak</a></li>
+                <li><a href="#" className="text-gray-600 hover:text-[#E56F17] transition-colors">Belanja</a></li>
+                <li><a href="#" className="text-gray-600 hover:text-[#E56F17] transition-colors">Tentang</a></li>
+                <li><a href="#" className="text-gray-600 hover:text-[#E56F17] transition-colors">Blog</a></li>
+                <li><a href="#" className="text-gray-600 hover:text-[#E56F17] transition-colors">Kontak</a></li>
               </ul>
             </div>
 

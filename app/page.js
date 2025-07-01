@@ -57,7 +57,7 @@ export default function Home() {
                   className="w-156 xl:w-192 h-auto"
                 />
               </div>
-              <div className="text-center lg:text-left mb-10 lg:mb-20">
+              <div className="text-center lg:text-left mb-10">
                 <button className="bg-orange-500 text-white px-8 py-3 rounded-full hover:bg-orange-600 transition-colors">
                   Pesan Sekarang
                 </button>
@@ -76,7 +76,7 @@ export default function Home() {
       </section>
 
       {/* Product Categories */}
-      <section className="container mx-auto px-5 pt-8">
+      <section className="container mx-auto px-5 pt-8 pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Daging Beku */}
           <div className="bg-green-500 rounded-3xl p-8 text-white relative overflow-hidden">
@@ -287,25 +287,30 @@ export default function Home() {
       <section className="container mx-auto px-5 py-16">
         <div className="bg-green-500 rounded-2xl p-8 lg:p-16 text-white relative overflow-hidden">
           <div className="flex flex-col lg:flex-row items-center justify-between">
-            <div className="lg:w-1/2 mb-8 lg:mb-0">
-              <h2 className="text-2xl lg:text-3xl font-bold mb-4 text-center font-montserrat">Discount 5%</h2>
-              <h3 className="text-4xl lg:text-6xl font-black mb-4 leading-tight text-center font-montserrat">
-                DAGING RENDANG<br />& SEMUR
+            <div className="lg:w-[70%] mb-8 lg:mb-0 relative">
+              <h2 className="text-2xl lg:text-3xl font-bold text-center lg:text-left font-montserrat relative z-10">Discount 5%</h2>
+              <h3 className="text-4xl lg:text-7xl xl:text-9xl font-black lg:leading-15 xl:leading-25 text-center lg:text-left tracking-tighter font-montserrat relative z-10">
+                DAGING
+                <span className="hidden lg:inline"><br /></span>
+                <span className="inline lg:hidden"> </span>
+                RENDANG
+                <br />
+                & SEMUR
               </h3>
-              <p className="text-lg font-semibold mb-8 text-center font-montserrat">9 Nov to 31 Dec</p>
-            </div>
-            <div className="lg:w-1/2 text-center lg:text-right">
-              <div className="mb-8">
+              <p className="text-2xl font-semibold mb-8 text-center lg:text-left font-montserrat relative z-10">9 Nov to 31 Dec</p>
+              <div className="lg:absolute lg:top-0 lg:right-0 lg:z-0">
                 <Image
                   src="/sapiku-banner.png"
                   alt="SapiKu Banner"
                   width={400}
                   height={200}
-                  className="w-full max-w-md mx-auto"
+                  className="w-64 md:w-100 xl:w-172 mx-auto"
                 />
               </div>
+            </div>
+            <div className="lg:w-[30%] text-center lg:text-left">
               <h4 className="text-lg font-medium mb-2">Untuk Para Pelanggan Kami</h4>
-              <h5 className="text-3xl font-bold mb-4">Pesta Akhir Tahun</h5>
+              <h5 className="text-3xl lg:text-5xl font-bold mb-4 tracking-tight">Pesta Akhir Tahun</h5>
               <p className="text-base mb-6">
                 Buat moment akhir tahun kamu dan keluarga menjadi lebih bermakna bersama
                 SapiKu, Pusat Daging Murah Jakarta
@@ -334,9 +339,9 @@ export default function Home() {
                 alt="Daging Segar/Fresh 1 kg"
                 width={300}
                 height={200}
-                className="w-full h-48 object-cover"
+                className="w-full h-64 object-cover"
               />
-              <div className="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-2xl text-xs font-bold">
+              <div className="absolute top-4 left-4 w-10 h-10 bg-red-500 text-white flex items-center justify-center rounded-full text-xs font-bold">
                 SALE
               </div>
             </div>
@@ -357,9 +362,9 @@ export default function Home() {
                 alt="Daging Beku untuk Rendang 1 kg"
                 width={300}
                 height={200}
-                className="w-full h-48 object-cover"
+                className="w-full h-64 object-cover"
               />
-              <div className="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-2xl text-xs font-bold">
+              <div className="absolute top-4 left-4 w-10 h-10 bg-red-500 text-white flex items-center justify-center rounded-full text-xs font-bold">
                 SALE
               </div>
             </div>
@@ -380,9 +385,9 @@ export default function Home() {
                 alt="Daging Beku untuk Semur 1 kg"
                 width={300}
                 height={200}
-                className="w-full h-48 object-cover"
+                className="w-full h-64 object-cover"
               />
-              <div className="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-2xl text-xs font-bold">
+              <div className="absolute top-4 left-4 w-10 h-10 bg-red-500 text-white flex items-center justify-center rounded-full text-xs font-bold">
                 SALE
               </div>
             </div>
@@ -403,7 +408,7 @@ export default function Home() {
                 alt="Tulangan Iga Kambing 1 kg"
                 width={300}
                 height={200}
-                className="w-full h-48 object-cover"
+                className="w-full h-64 object-cover"
               />
             </div>
             <div className="p-4">
@@ -420,7 +425,7 @@ export default function Home() {
               alt="Daging Sliced Meat Teriyaki Fat 500 g"
               width={300}
               height={200}
-              className="w-full h-48 object-cover"
+              className="w-full h-64 object-cover"
             />
             <div className="p-4">
               <h3 className="text-lg font-normal text-black mb-2">Daging Sliced Meat Teriyaki Fat 500 g</h3>
@@ -434,7 +439,7 @@ export default function Home() {
               alt="Tulangan Iga Sop Super 1 kg"
               width={300}
               height={200}
-              className="w-full h-48 object-cover"
+              className="w-full h-64 object-cover"
             />
             <div className="p-4">
               <h3 className="text-lg font-normal text-black mb-2">Tulangan Iga Sop Super 1 kg</h3>
@@ -448,7 +453,7 @@ export default function Home() {
               alt="Tulangan Iga Shortrib 1 kg (Konro Bakar)"
               width={300}
               height={200}
-              className="w-full h-48 object-cover"
+              className="w-full h-64 object-cover"
             />
             <div className="p-4">
               <h3 className="text-lg font-normal text-black mb-2">Tulangan Iga Shortrib 1 kg (Konro Bakar)</h3>
@@ -462,7 +467,7 @@ export default function Home() {
               alt="Hati Sapi 1 kg"
               width={300}
               height={200}
-              className="w-full h-48 object-cover"
+              className="w-full h-64 object-cover"
             />
             <div className="p-4">
               <h3 className="text-lg font-normal text-black mb-2">Hati Sapi 1 kg</h3>
@@ -476,7 +481,7 @@ export default function Home() {
               alt="Varian Saus My Taste"
               width={300}
               height={200}
-              className="w-full h-48 object-cover"
+              className="w-full h-64 object-cover"
             />
             <div className="p-4">
               <h3 className="text-lg font-normal text-black mb-2">Varian Saus My Taste</h3>
@@ -490,7 +495,7 @@ export default function Home() {
               alt="Varian Saus Kikkoman"
               width={300}
               height={200}
-              className="w-full h-48 object-cover"
+              className="w-full h-64 object-cover"
             />
             <div className="p-4">
               <h3 className="text-lg font-normal text-black mb-2">Varian Saus Kikkoman</h3>
@@ -504,7 +509,7 @@ export default function Home() {
               alt="Udang Fresh 500 g"
               width={300}
               height={200}
-              className="w-full h-48 object-cover"
+              className="w-full h-64 object-cover"
             />
             <div className="p-4">
               <h3 className="text-lg font-normal text-black mb-2">Udang Fresh 500 g</h3>
@@ -518,7 +523,7 @@ export default function Home() {
               alt="Cumi Ring 500 g"
               width={300}
               height={200}
-              className="w-full h-48 object-cover"
+              className="w-full h-64 object-cover"
             />
             <div className="p-4">
               <h3 className="text-lg font-normal text-black mb-2">Cumi Ring 500 g</h3>
@@ -530,34 +535,35 @@ export default function Home() {
 
       {/* Final CTA Section */}
       <section className="container mx-auto px-5 py-16">
-        <div className="bg-orange-500 rounded-2xl p-8 lg:p-16 text-white text-center relative overflow-hidden">
-          <div className="relative z-10">
-            <h2 className="text-2xl lg:text-3xl font-bold mb-4 font-montserrat">Gratis 100%</h2>
-            <h3 className="text-4xl lg:text-5xl font-black mb-4 font-montserrat">ONGKOS KIRIM</h3>
-            <p className="text-lg font-light mb-8 font-montserrat">*Syarat & Ketentuan Berlaku</p>
-
-            <div className="w-100 h-100 mb-8 mx-auto">
-            <Image
-              src="/hero-bg.png"
-              alt="Background"
-              width={300}
-              height={300}
-              className="w-full h-full"
-            />
-          </div>
-
-            <div className="mb-8">
+        <div className="bg-orange-500 rounded-2xl p-8 lg:p-16 text-white relative overflow-hidden">
+          <div className="flex flex-col lg:flex-row items-center justify-between">
+            <div className="lg:w-1/3 mb-8 lg:mb-0">
+              <h2 className="text-2xl lg:text-3xl font-bold text-center lg:text-left font-montserrat">Gratis 100%</h2>
+              <h3 className="text-4xl lg:text-7xl xl:text-8xl font-black lg:leading-15 xl:leading-20 text-center lg:text-left tracking-tighter font-montserrat">
+                ONGKOS KIRIM
+              </h3>
+              <p className="text-2xl font-light mb-8 text-center lg:text-left font-montserrat">*Syarat & Ketentuan Berlaku</p>
+            </div>
+            <div className="mb-8 lg:w-1/3">
+              <Image
+                src="/hero-bg.png"
+                alt="Background"
+                width={300}
+                height={300}
+                className="w-full max-w-md mx-auto"
+              />
+            </div>
+            <div className="lg:w-1/3 text-center lg:text-left lg:ml-10">
               <h4 className="text-lg font-medium mb-2">Untuk Para Pelanggan Kami</h4>
-              <h5 className="text-3xl font-bold mb-4">Pesta Akhir Tahun</h5>
-              <p className="text-base mb-6 max-w-2xl mx-auto">
-                Buat momen akhir tahun kamu dan keluarga menjadi lebih bermakna bersama
+              <h5 className="text-3xl lg:text-5xl font-bold mb-4 tracking-tight">Pesta Akhir Tahun</h5>
+              <p className="text-base mb-6">
+                Buat moment akhir tahun kamu dan keluarga menjadi lebih bermakna bersama
                 SapiKu, Pusat Daging Murah Jakarta
               </p>
+              <button className="bg-white text-red-500 px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors">
+                Pesan Sekarang
+              </button>
             </div>
-
-            <button className="bg-white text-red-500 px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors">
-              Pesan Sekarang
-            </button>
           </div>
         </div>
       </section>
@@ -645,7 +651,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-white border-t border-gray-200">
         <div className="container mx-auto px-5 py-16">
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-[50fr_10fr_20fr_20fr] gap-8 mb-8">
             {/* Company Info */}
             <div className="lg:col-span-1">
               <div className="mb-6">
@@ -658,12 +664,12 @@ export default function Home() {
                 />
               </div>
               <h3 className="text-lg font-semibold text-black mb-4">Pusat Daging Murah Jakarta</h3>
-              <p className="text-gray-600 text-sm leading-relaxed mb-6">
+              <p className="text-gray-600 text-sm leading-relaxed mb-6 lg:pr-[50%]">
                 Sapiku.id adalah pusat daging sapi murah dan berkualitas di Jakarta, menyediakan daging segar, beku, hingga produk peternakan untuk kebutuhan harian dan hari besar Anda.
               </p>
 
               {/* Social Media */}
-              <div className="flex space-x-4">
+              <div className="flex space-x-10">
                 <a href="#" className="hover:opacity-80 transition-opacity">
                   <Image
                     src="/footer_icons/instagram.svg"
@@ -705,7 +711,7 @@ export default function Home() {
 
             {/* Quick Links */}
             <div>
-              <h4 className="text-lg font-bold text-black mb-4">Quick Links</h4>
+              <h4 className="text-lg font-bold text-black mb-4">Links</h4>
               <ul className="space-y-3">
                 <li><a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">Belanja</a></li>
                 <li><a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">Tentang</a></li>
@@ -717,9 +723,9 @@ export default function Home() {
             {/* Location */}
             <div>
               <h4 className="text-lg font-bold text-black mb-4">Lokasi</h4>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Gg. Swadaya 3 No.90, RT 003 / RW 006,<br />
-                Kel. Srengseng Sawah, Kec. Jagakarsa,<br />
+              <p className="text-gray-600 text-sm leading-relaxed text-justify lg:pr-[10%]">
+                Gg. Swadaya 3 No.90, RT 003 / RW 006,
+                Kel. Srengseng Sawah, Kec. Jagakarsa,
                 Kota Jakarta Selatan, DKI Jakarta 12640
               </p>
             </div>

@@ -1,6 +1,9 @@
+"use client";
 import Image from "next/image";
+import { SignedIn, SignedOut, UserButton, useClerk } from '@clerk/clerk-react';
 
 export default function Home() {
+  const clerk = useClerk();
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -8,10 +11,10 @@ export default function Home() {
         <div className="container mx-auto px-5 py-4 flex justify-between items-center">
           <div className="flex items-center">
             <Image
-              src="/header-logo.svg"
+              src="/header-logo.png"
               alt="SapiKu Logo"
-              width={92}
-              height={40}
+              width={1000}
+              height={1000}
               className="h-10 w-auto"
             />
           </div>
@@ -23,10 +26,32 @@ export default function Home() {
             <a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">Tentang</a>
             <a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">Blog</a>
             <a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">Kontak</a>
+            <SignedOut>
+              <button
+                onClick={() => clerk.openSignIn({})}
+                className="bg-orange-500 text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-orange-600 transition-colors"
+              >
+                Login
+              </button>
+            </SignedOut>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
           </nav>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden">
+          <button className="md:hidden flex flex-row space-x-5 items-center">
+            <SignedOut>
+              <button
+                onClick={() => clerk.openSignIn({})}
+                className="bg-orange-500 text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-orange-600 transition-colors"
+              >
+                Login
+              </button>
+            </SignedOut>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
@@ -79,63 +104,67 @@ export default function Home() {
       <section className="container mx-auto px-5 pt-8 pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Daging Beku */}
-          <div className="bg-green-500 rounded-3xl p-8 text-white relative overflow-hidden">
-            <div className="mb-8">
-              <h3 className="text-lg font-normal">Aneka</h3>
-              <h4 className="text-3xl font-semibold">Daging</h4>
-              <p className="text-3xl sm:text-3xl font-black font-montserrat">BEKU/FROZEN</p>
+          <div className="bg-green-500 rounded-3xl p-8 text-white relative flex flex-col sm:flex-row lg:block">
+            <div>
+              <div className="lg:mt-30">
+                <h3 className="text-lg font-normal relative z-10">Aneka</h3>
+                <h4 className="text-3xl font-semibold relative z-10">Daging</h4>
+                <p className="text-3xl sm:text-3xl font-black font-montserrat relative z-10">BEKU/FROZEN</p>
+              </div>
+              <button className="bg-gray-800 text-white px-6 py-2 rounded-full text-sm hover:bg-gray-700 transition-colors mt-5">
+                Telusuri
+              </button>
             </div>
-            <div className="mb-2">
+            <div className="lg:absolute lg:top-[-50px] lg:right-[-50px] z-0">
               <Image
                 src="/daging-beku.png"
                 alt="Daging Beku"
-                width={300}
-                height={200}
-                className="w-full"
+                width={500}
+                height={500}
+                className="w-120 lg:w-100"
               />
             </div>
-            <button className="bg-gray-800 text-white px-6 py-2 rounded-full text-sm hover:bg-gray-700 transition-colors">
-              Telusuri
-            </button>
           </div>
 
           {/* Jeroan & Tetelan */}
-          <div className="bg-orange-500 rounded-3xl p-8 text-white relative overflow-hidden">
-            <div className="mb-8">
-              <h3 className="text-lg font-normal">Aneka</h3>
-              <h4 className="text-3xl font-semibold">Jeroan &</h4>
-              <p className="text-4xl font-black text-white font-montserrat">TETELAN</p>
+          <div className="bg-orange-500 rounded-3xl p-8 text-white relative flex flex-col sm:flex-row items-center justify-center lg:block">
+            <div>
+              <div className="lg:mt-30">
+                <h3 className="text-lg text-center sm:text-left font-normal relative z-10">Aneka</h3>
+                <h4 className="text-3xl text-center sm:text-left font-semibold relative z-10">Jeroan &</h4>
+                <p className="text-4xl text-center sm:text-left font-black text-white font-montserrat relative z-10">TETELAN</p>
+              </div>
+              <button className="bg-gray-800 text-gray-200 px-6 py-2 rounded-full text-sm hover:bg-gray-700 transition-colors mt-5 block mx-auto lg:mx-0">
+                Telusuri
+              </button>
             </div>
-            <div className="mb-2">
+            <div className="lg:absolute lg:top-[-50px] lg:right-[-20px] z-0">
               <Image
                 src="/jeroan-tetelan.png"
                 alt="Jeroan & Tetelan"
-                width={300}
-                height={200}
-                className="w-full"
+                width={1000}
+                height={1000}
+                className="w-90 lg:w-100"
               />
             </div>
-            <button className="bg-gray-800 text-gray-200 px-6 py-2 rounded-full text-sm hover:bg-gray-700 transition-colors">
-              Telusuri
-            </button>
           </div>
 
           {/* Tulang Iga */}
-          <div className="bg-[#cccccc] rounded-3xl p-8 text-black relative overflow-hidden lg:col-span-1">
-            <div className="flex flex-col h-full">
-              <div className="mb-8">
+          <div className="bg-[#cccccc] rounded-3xl p-5 text-black relative lg:col-span-1">
+            <div className="lg:block flex flex-col sm:flex-row items-center h-full">
+              <div className="lg:absolute lg:top-[-50px] lg:right-[-20px] z-0">
                 <Image
                   src="/tulang-iga.png"
                   alt="Tulang Iga"
-                  width={400}
-                  height={300}
-                  className="w-full"
+                  width={1000}
+                  height={1000}
+                  className="w-90 lg:w-100"
                 />
               </div>
-              <div className="mt-auto">
-                <h3 className="text-lg font-normal">Aneka</h3>
-                <h4 className="text-3xl font-semibold">Tulang Iga &</h4>
-                <p className="text-4xl font-black text-white mb-6 font-montserrat">TULANG SOP</p>
+              <div className="lg:mt-30">
+                <h3 className="text-lg font-normal relative z-10">Aneka</h3>
+                <h4 className="text-3xl font-semibold relative z-10">Tulang Iga &</h4>
+                <p className="text-4xl font-black text-white mb-6 font-montserrat relative z-10">TULANG SOP</p>
                 <button className="bg-orange-500 text-white px-6 py-2 rounded-full text-sm hover:bg-orange-600 transition-colors">
                   Telusuri
                 </button>
@@ -145,63 +174,67 @@ export default function Home() {
         </div>
 
         {/* Second Row */}
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mt-8">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mt-8 overflow-visible">
           {/* Produk Penunjang */}
-          <div className="bg-[#cccccc] rounded-2xl p-6 text-black">
-            <div className="mb-6">
+          <div className="bg-[#cccccc] rounded-2xl p-6 text-black relative overflow-visible flex flex-col sm:flex-row justify-between items-center lg:block">
+            <div>
+              <h3 className="text-lg text-center sm:text-left font-medium relative z-10">Aneka</h3>
+              <h4 className="text-2xl text-center sm:text-left font-bold relative z-10">Produk</h4>
+              <p className="text-2xl text-center sm:text-left font-black text-white mb-4 font-montserrat relative z-10">PENUNJANG</p>
+              <button className="bg-orange-500 text-white px-6 py-2 rounded-full text-sm hover:bg-orange-600 transition-colors relative z-10 lg:mb-50 block mx-auto lg:mx-0">
+                Telusuri
+              </button>
+            </div>
+            <div className="lg:absolute -bottom-5 xl:-bottom-10 lg:-right-10 z-0">
               <Image
                 src="/produk-penunjang.png"
                 alt="Produk Penunjang"
-                width={250}
-                height={180}
-                className="w-full"
+                width={1000}
+                height={1000}
+                className="w-120 lg:w-150"
               />
             </div>
-            <h3 className="text-lg font-medium">Aneka</h3>
-            <h4 className="text-2xl font-bold">Produk</h4>
-            <p className="text-2xl font-black text-white mb-4 font-montserrat">PENUNJANG</p>
-            <button className="bg-orange-500 text-white px-6 py-2 rounded-full text-sm hover:bg-orange-600 transition-colors">
-              Telusuri
-            </button>
           </div>
 
           {/* Daging Slice */}
-          <div className="bg-green-500 rounded-2xl p-6 text-white">
-            <div className="mb-6">
+          <div className="bg-green-500 rounded-2xl p-6 text-white relative overflow-visible flex flex-col sm:flex-row items-center justify-center lg:block">
+            <div className="lg:absolute -bottom-5 xl:-bottom-15 lg:-right-15 z-0">
               <Image
                 src="/daging-slice.png"
                 alt="Daging Slice"
-                width={250}
-                height={180}
-                className="w-full"
+                width={1000}
+                height={1000}
+                className="w-90 lg:w-120"
               />
             </div>
-            <h3 className="text-lg font-normal">Aneka</h3>
-            <h4 className="text-2xl font-semibold">Daging</h4>
-            <p className="text-3xl font-black mb-4 font-montserrat">SLICE</p>
-            <button className="bg-gray-800 text-white px-6 py-2 rounded-full text-sm hover:bg-gray-700 transition-colors">
-              Telusuri
-            </button>
+            <div>
+              <h3 className="text-lg text-center sm:text-left font-normal relative z-10">Aneka</h3>
+              <h4 className="text-2xl text-center sm:text-left font-semibold relative z-10">Daging</h4>
+              <p className="text-3xl text-center sm:text-left font-black mb-4 font-montserrat relative z-10">SLICE</p>
+              <button className="bg-gray-800 text-white px-6 py-2 rounded-full text-sm hover:bg-gray-700 transition-colors relative z-10 lg:mb-50 block mx-auto lg:mx-0">
+                Telusuri
+              </button>
+            </div>
           </div>
 
           {/* Daging BBQ/Steak */}
-          <div className="bg-orange-500 rounded-3xl p-6 text-white lg:col-span-2">
+          <div className="bg-orange-500 rounded-3xl p-6 text-white lg:col-span-2 overflow-visible relative">
             <div className="flex flex-col lg:flex-row items-center">
-              <div className="lg:w-1/2 mb-6 lg:mb-0">
-                <h3 className="text-lg font-medium">Aneka</h3>
-                <h4 className="text-2xl font-semibold">Daging</h4>
-                <p className="text-3xl font-black mb-6 font-montserrat">BBQ/STEAK</p>
-                <button className="bg-gray-800 text-white px-6 py-2 rounded-full text-sm hover:bg-gray-700 transition-colors">
+              <div className="lg:w-1/2 mb-6 lg:mb-0 relative z-10 lg:mt-20">
+                <h3 className="text-lg text-center lg:text-left font-medium">Aneka</h3>
+                <h4 className="text-2xl text-center lg:text-left font-semibold">Daging</h4>
+                <p className="text-3xl text-center lg:text-left font-black mb-6 font-montserrat">BBQ/STEAK</p>
+                <button className="bg-gray-800 text-white px-6 py-2 rounded-full text-sm hover:bg-gray-700 transition-colors lg:mb-30 block mx-auto lg:mx-0">
                   Telusuri
                 </button>
               </div>
-              <div className="lg:w-1/2">
+              <div className="lg:absolute lg:-bottom-10 lg:-right-5 z-0">
                 <Image
                   src="/daging-steak.png"
                   alt="Daging BBQ/Steak"
-                  width={300}
-                  height={300}
-                  className="w-full"
+                  width={1000}
+                  height={1000}
+                  className="w-90 lg:w-120"
                 />
               </div>
             </div>
@@ -302,9 +335,9 @@ export default function Home() {
                 <Image
                   src="/sapiku-banner.png"
                   alt="SapiKu Banner"
-                  width={400}
-                  height={200}
-                  className="w-64 md:w-100 xl:w-172 mx-auto"
+                  width={1000}
+                  height={1000}
+                  className="w-120 xl:w-172 mx-auto"
                 />
               </div>
             </div>
@@ -548,8 +581,8 @@ export default function Home() {
               <Image
                 src="/hero-bg.png"
                 alt="Background"
-                width={300}
-                height={300}
+                width={1000}
+                height={1000}
                 className="w-full max-w-md mx-auto"
               />
             </div>
@@ -629,22 +662,20 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-            <Image
-              src="/blog-4.png"
-              alt="Sapi Ramah Lingkungan"
-              width={400}
-              height={250}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-8 text-black">
+          <div className="relative rounded-2xl shadow-sm overflow-hidden border border-gray-100 h-96 bg-cover bg-center" style={{ backgroundImage: "url('/blog-4.png')" }}>
+            {/* Black overlay with 40% opacity */}
+            <div className="absolute inset-0 bg-black opacity-50"></div>
+
+            {/* Content */}
+            <div className="relative z-10 p-8 text-white flex flex-col justify-center h-full">
               <h3 className="text-3xl font-bold mb-4">Sapi Ramah Lingkungan</h3>
-              <p className="text-gray-600 mb-6">
+              <p className="mb-6">
                 Peternakan sapi sering dikaitkan dengan emisi gas rumah kaca, namun pendekatan berkelanjutan seperti rotasi...
               </p>
-              <a href="#" className="text-orange-500 font-medium hover:underline">Read more →</a>
+              <a href="#" className="text-white font-medium hover:underline">Read more →</a>
             </div>
           </div>
+
         </div>
       </section>
 
@@ -656,10 +687,10 @@ export default function Home() {
             <div className="lg:col-span-1">
               <div className="mb-6">
                 <Image
-                  src="/header-logo.svg"
+                  src="/header-logo.png"
                   alt="SapiKu Logo"
-                  width={166}
-                  height={72}
+                  width={1000}
+                  height={1000}
                   className="h-16 w-auto"
                 />
               </div>
@@ -670,7 +701,8 @@ export default function Home() {
 
               {/* Social Media */}
               <div className="flex space-x-10">
-                <a href="#" className="hover:opacity-80 transition-opacity">
+                <a href="https://www.instagram.com/sapiku_ind/" target="_blank"
+                  rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
                   <Image
                     src="/footer_icons/instagram.svg"
                     alt="Instagram"
@@ -679,7 +711,8 @@ export default function Home() {
                     className="w-6 h-6"
                   />
                 </a>
-                <a href="#" className="hover:opacity-80 transition-opacity">
+                <a href="#" target="_blank"
+                  rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
                   <Image
                     src="/footer_icons/linkedin.svg"
                     alt="LinkedIn"
@@ -688,7 +721,8 @@ export default function Home() {
                     className="w-6 h-6"
                   />
                 </a>
-                <a href="#" className="hover:opacity-80 transition-opacity">
+                <a href="#" target="_blank"
+                  rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
                   <Image
                     src="/footer_icons/facebook.svg"
                     alt="Facebook"
@@ -697,7 +731,8 @@ export default function Home() {
                     className="w-6 h-6"
                   />
                 </a>
-                <a href="#" className="hover:opacity-80 transition-opacity">
+                <a href="#" target="_blank"
+                  rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
                   <Image
                     src="/footer_icons/twitter.svg"
                     alt="Twitter"

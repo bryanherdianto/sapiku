@@ -1,5 +1,6 @@
 import { Poppins, Montserrat } from "next/font/google";
 import "./globals.css";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -23,6 +24,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
+    <ClerkProvider>
     <html lang="id">
       <head>
         <link rel="icon" href="/favicon.svg" sizes="any" />
@@ -32,6 +34,6 @@ export default function RootLayout({ children }) {
       >
         {children}
       </body>
-    </html>
+    </html></ClerkProvider>
   );
 }

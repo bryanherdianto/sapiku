@@ -40,7 +40,7 @@ export default function Home() {
           </nav>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden flex flex-row space-x-5 items-center">
+          <div className="md:hidden flex flex-row space-x-5 items-center">
             <SignedOut>
               <button
                 onClick={() => clerk.openSignIn({})}
@@ -55,7 +55,7 @@ export default function Home() {
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
-          </button>
+          </div>
         </div>
       </header>
 
@@ -104,7 +104,7 @@ export default function Home() {
       <section className="container mx-auto px-5 pt-8 pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Daging Beku */}
-          <div className="bg-[#71C454] rounded-3xl p-8 text-white relative flex flex-col sm:flex-row lg:block">
+          <div className="bg-[#71C454] rounded-3xl p-5 text-white relative flex flex-col sm:flex-row lg:block">
             <div>
               <div className="lg:mt-30">
                 <h3 className="text-lg font-normal relative z-10">Aneka</h3>
@@ -180,7 +180,7 @@ export default function Home() {
             <div>
               <h3 className="text-lg text-center sm:text-left font-medium relative z-10">Aneka</h3>
               <h4 className="text-2xl text-center sm:text-left font-bold relative z-10">Produk</h4>
-              <p className="text-2xl text-center sm:text-left font-black text-white mb-4 font-montserrat relative z-10">PENUNJANG</p>
+              <p className="text-4xl lg:text-2xl xl:text-3xl text-center sm:text-left font-black text-white mb-4 font-montserrat relative z-10">PENUNJANG</p>
               <button className="bg-[#E56F17] text-white px-6 py-2 rounded-full text-sm hover:bg-[#e55817] transition-colors relative z-10 lg:mb-50 block mx-auto lg:mx-0">
                 Telusuri
               </button>
@@ -210,7 +210,7 @@ export default function Home() {
             <div>
               <h3 className="text-lg text-center sm:text-left font-normal relative z-10">Aneka</h3>
               <h4 className="text-2xl text-center sm:text-left font-semibold relative z-10">Daging</h4>
-              <p className="text-3xl text-center sm:text-left font-black mb-4 font-montserrat relative z-10">SLICE</p>
+              <p className="text-4xl lg:text-3xl text-center sm:text-left font-black mb-4 font-montserrat relative z-10">SLICE</p>
               <button className="bg-gray-800 text-white px-6 py-2 rounded-full text-sm hover:bg-gray-700 transition-colors relative z-10 lg:mb-50 block mx-auto lg:mx-0">
                 Telusuri
               </button>
@@ -223,7 +223,7 @@ export default function Home() {
               <div className="lg:w-1/2 mb-6 lg:mb-0 relative z-10 lg:mt-20">
                 <h3 className="text-lg text-center lg:text-left font-medium">Aneka</h3>
                 <h4 className="text-2xl text-center lg:text-left font-semibold">Daging</h4>
-                <p className="text-3xl text-center lg:text-left font-black mb-6 font-montserrat">BBQ/STEAK</p>
+                <p className="text-4xl lg:text-3xl text-center lg:text-left font-black mb-6 font-montserrat">BBQ/STEAK</p>
                 <button className="bg-gray-800 text-white px-6 py-2 rounded-full text-sm hover:bg-gray-700 transition-colors lg:mb-30 block mx-auto lg:mx-0">
                   Telusuri
                 </button>

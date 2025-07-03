@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { motion } from "motion/react"
 import { SignedIn, SignedOut, UserButton, useClerk } from '@clerk/clerk-react';
 
 export default function Home() {
@@ -29,7 +30,7 @@ export default function Home() {
             <SignedOut>
               <button
                 onClick={() => clerk.openSignIn({})}
-                className="bg-[#E56F17] text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-[#e55817] transition-colors"
+                className="bg-[#E56F17] text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-[#e55817] transition-colors cursor-pointer"
               >
                 Login
               </button>
@@ -44,7 +45,7 @@ export default function Home() {
             <SignedOut>
               <button
                 onClick={() => clerk.openSignIn({})}
-                className="bg-[#E56F17] text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-[#e55817] transition-colors"
+                className="bg-[#E56F17] text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-[#e55817] transition-colors cursor-pointer"
               >
                 Login
               </button>
@@ -61,57 +62,101 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="container mx-auto px-5 pt-8">
-        <div className="bg-[#cccccc] rounded-2xl p-4 lg:p-16 text-white relative overflow-hidden">
+        <motion.div
+          className="bg-[#cccccc] rounded-2xl p-4 lg:p-16 text-white relative overflow-hidden"
+          initial={{ scale: 1.1, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{
+            duration: 0.8,
+            ease: [0.25, 0.46, 0.45, 0.94]
+          }}
+        >
           <div className="flex flex-col lg:flex-row items-center justify-between">
             <div className="w-full mb-8 lg:mb-0">
-              <h1 className="text-sm sm:text-lg font-medium text-black mb-2 mt-20 text-center lg:text-left font-poppins relative z-10">
+              <motion.h1
+                className="text-sm sm:text-lg font-medium text-black mb-2 mt-20 lg:mt-30 text-center lg:text-left font-poppins relative z-10"
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
                 Pusat Daging Murah Jakarta
-              </h1>
-              <h2 className="text-2xl sm:text-4xl lg:text-7xl font-bold text-black mb-2 text-center lg:text-left font-poppins relative z-10">
+              </motion.h1>
+              <motion.h2
+                className="text-2xl sm:text-4xl lg:text-7xl font-bold text-black mb-4 text-center lg:text-left font-poppins relative z-10"
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
                 Aneka Daging
-              </h2>
-              <p className="text-3xl sm:text-7xl lg:text-8xl xl:text-9xl font-black text-white mb-4 text-center lg:text-left font-montserrat relative z-10">
+              </motion.h2>
+              <motion.p
+                className="text-3xl sm:text-7xl lg:text-8xl xl:text-9xl font-black text-white mb-4 text-center lg:text-left font-montserrat relative z-10"
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
                 SEGAR/FRESH
-              </p>
-              <div className="relative lg:absolute lg:top-20 xl:top-3 lg:right-0 z-0 mb-8">
+              </motion.p>
+              <motion.div
+                className="relative lg:absolute lg:top-20 xl:top-10 lg:right-0 z-0 mb-8"
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+              >
                 <Image
                   src="/sapiku-logo.png"
                   alt="SapiKu HD"
                   width={1000}
                   height={1000}
-                  className="w-156 xl:w-192 h-auto"
+                  className="w-156 xl:w-220 h-auto"
                 />
-              </div>
-              <div className="text-center lg:text-left mb-10">
-                <button className="bg-[#E56F17] text-white px-8 py-3 rounded-full hover:bg-[#e55817] transition-colors">
+              </motion.div>
+              <motion.div
+                className="text-center lg:text-left mb-10"
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+              >
+                <button className="bg-[#E56F17] text-white px-8 py-3 rounded-full hover:bg-[#e55817] transition-colors cursor-pointer">
                   Pesan Sekarang
                 </button>
-              </div>
-              <div className="justify-end text-right hidden lg:block">
+              </motion.div>
+              <motion.div
+                className="justify-end text-right hidden lg:block"
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.7 }}
+              >
                 <h3 className="text-xl font-bold text-black mb-4">SapiKu</h3>
                 <p className="text-gray-600 text-base leading-relaxed">
                   Kami menyediakan beragam aneka daging, mulai dari<br />
                   Daging Segar, Daging Beku, Daging Slice, Daging BBQ,<br />
                   Jeroan, Tetelan, Iga, dan produk penunjang lainnya.
                 </p>
-              </div>
+              </motion.div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Product Categories */}
       <section className="container mx-auto px-5 pt-8 pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Daging Beku */}
-          <div className="bg-[#71C454] rounded-3xl p-5 text-white relative flex flex-col sm:flex-row lg:block">
+          <motion.div
+            className="bg-[#71C454] rounded-3xl p-5 text-white relative flex flex-col sm:flex-row lg:block"
+            initial={{ x: 20, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
             <div>
               <div className="lg:mt-30">
                 <h3 className="text-lg font-normal relative z-10">Aneka</h3>
                 <h4 className="text-3xl font-semibold relative z-10">Daging</h4>
                 <p className="text-3xl sm:text-3xl font-black font-montserrat relative z-10">BEKU/FROZEN</p>
               </div>
-              <button className="bg-gray-800 text-white px-6 py-2 rounded-full text-sm hover:bg-gray-700 transition-colors mt-5">
+              <button className="bg-gray-800 text-white px-6 py-2 rounded-full text-sm hover:bg-gray-700 transition-colors mt-5 cursor-pointer">
                 Telusuri
               </button>
             </div>
@@ -124,17 +169,23 @@ export default function Home() {
                 className="w-120 lg:w-100"
               />
             </div>
-          </div>
+          </motion.div>
 
           {/* Jeroan & Tetelan */}
-          <div className="bg-[#E56F17] rounded-3xl p-8 text-white relative flex flex-col sm:flex-row items-center justify-center lg:block">
+          <motion.div
+            className="bg-[#E56F17] rounded-3xl p-8 text-white relative flex flex-col sm:flex-row items-center justify-center lg:block"
+            initial={{ x: 20, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
             <div>
               <div className="lg:mt-30">
                 <h3 className="text-lg text-center sm:text-left font-normal relative z-10">Aneka</h3>
                 <h4 className="text-3xl text-center sm:text-left font-semibold relative z-10">Jeroan &</h4>
                 <p className="text-4xl text-center sm:text-left font-black text-white font-montserrat relative z-10">TETELAN</p>
               </div>
-              <button className="bg-gray-800 text-gray-200 px-6 py-2 rounded-full text-sm hover:bg-gray-700 transition-colors mt-5 block mx-auto lg:mx-0">
+              <button className="bg-gray-800 text-gray-200 px-6 py-2 rounded-full text-sm hover:bg-gray-700 transition-colors mt-5 block mx-auto lg:mx-0 cursor-pointer">
                 Telusuri
               </button>
             </div>
@@ -147,10 +198,16 @@ export default function Home() {
                 className="w-90 lg:w-100"
               />
             </div>
-          </div>
+          </motion.div>
 
           {/* Tulang Iga */}
-          <div className="bg-[#cccccc] rounded-3xl p-5 text-black relative lg:col-span-1">
+          <motion.div
+            className="bg-[#cccccc] rounded-3xl p-5 text-black relative lg:col-span-1"
+            initial={{ x: 20, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
             <div className="lg:block flex flex-col sm:flex-row items-center h-full">
               <div className="lg:absolute lg:top-[-50px] lg:right-[-20px] z-0">
                 <Image
@@ -165,23 +222,29 @@ export default function Home() {
                 <h3 className="text-lg font-normal relative z-10">Aneka</h3>
                 <h4 className="text-3xl font-semibold relative z-10">Tulang Iga &</h4>
                 <p className="text-4xl font-black text-white mb-6 font-montserrat relative z-10">TULANG SOP</p>
-                <button className="bg-[#E56F17] text-white px-6 py-2 rounded-full text-sm hover:bg-[#e55817] transition-colors">
+                <button className="bg-[#E56F17] text-white px-6 py-2 rounded-full text-sm hover:bg-[#e55817] transition-colors cursor-pointer">
                   Telusuri
                 </button>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Second Row */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mt-8 overflow-visible">
           {/* Produk Penunjang */}
-          <div className="bg-[#cccccc] rounded-2xl p-6 text-black relative overflow-visible flex flex-col sm:flex-row justify-between items-center lg:block">
+          <motion.div
+            className="bg-[#cccccc] rounded-3xl p-6 text-black relative overflow-visible flex flex-col sm:flex-row justify-between items-center lg:block"
+            initial={{ x: -20, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
             <div>
               <h3 className="text-lg text-center sm:text-left font-medium relative z-10">Aneka</h3>
               <h4 className="text-2xl text-center sm:text-left font-bold relative z-10">Produk</h4>
               <p className="text-4xl lg:text-2xl xl:text-3xl text-center sm:text-left font-black text-white mb-4 font-montserrat relative z-10">PENUNJANG</p>
-              <button className="bg-[#E56F17] text-white px-6 py-2 rounded-full text-sm hover:bg-[#e55817] transition-colors relative z-10 lg:mb-50 block mx-auto lg:mx-0">
+              <button className="bg-[#E56F17] text-white px-6 py-2 rounded-full text-sm hover:bg-[#e55817] transition-colors relative z-10 lg:mb-50 block mx-auto lg:mx-0 cursor-pointer">
                 Telusuri
               </button>
             </div>
@@ -194,10 +257,16 @@ export default function Home() {
                 className="w-120 lg:w-150"
               />
             </div>
-          </div>
+          </motion.div>
 
           {/* Daging Slice */}
-          <div className="bg-[#71C454] rounded-2xl p-6 text-white relative overflow-visible flex flex-col sm:flex-row items-center justify-center lg:block">
+          <motion.div
+            className="bg-[#71C454] rounded-3xl p-6 text-white relative overflow-visible flex flex-col sm:flex-row items-center justify-center lg:block"
+            initial={{ x: -20, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
             <div className="lg:absolute -bottom-5 xl:-bottom-15 lg:-right-15 z-0">
               <Image
                 src="/daging-slice.png"
@@ -211,20 +280,26 @@ export default function Home() {
               <h3 className="text-lg text-center sm:text-left font-normal relative z-10">Aneka</h3>
               <h4 className="text-2xl text-center sm:text-left font-semibold relative z-10">Daging</h4>
               <p className="text-4xl lg:text-3xl text-center sm:text-left font-black mb-4 font-montserrat relative z-10">SLICE</p>
-              <button className="bg-gray-800 text-white px-6 py-2 rounded-full text-sm hover:bg-gray-700 transition-colors relative z-10 lg:mb-50 block mx-auto lg:mx-0">
+              <button className="bg-gray-800 text-white px-6 py-2 rounded-full text-sm hover:bg-gray-700 transition-colors relative z-10 lg:mb-50 block mx-auto lg:mx-0 cursor-pointer">
                 Telusuri
               </button>
             </div>
-          </div>
+          </motion.div>
 
           {/* Daging BBQ/Steak */}
-          <div className="bg-[#E56F17] rounded-3xl p-6 text-white lg:col-span-2 overflow-visible relative">
+          <motion.div
+            className="bg-[#E56F17] rounded-3xl p-6 text-white lg:col-span-2 overflow-visible relative"
+            initial={{ x: -20, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
             <div className="flex flex-col lg:flex-row items-center">
               <div className="lg:w-1/2 mb-6 lg:mb-0 relative z-10 lg:mt-20">
                 <h3 className="text-lg text-center lg:text-left font-medium">Aneka</h3>
                 <h4 className="text-2xl text-center lg:text-left font-semibold">Daging</h4>
                 <p className="text-4xl lg:text-3xl text-center lg:text-left font-black mb-6 font-montserrat">BBQ/STEAK</p>
-                <button className="bg-gray-800 text-white px-6 py-2 rounded-full text-sm hover:bg-gray-700 transition-colors lg:mb-30 block mx-auto lg:mx-0">
+                <button className="bg-gray-800 text-white px-6 py-2 rounded-full text-sm hover:bg-gray-700 transition-colors lg:mb-30 block mx-auto lg:mx-0 cursor-pointer">
                   Telusuri
                 </button>
               </div>
@@ -238,19 +313,31 @@ export default function Home() {
                 />
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Features Section */}
       <section className="container mx-auto px-5 py-16">
-        <div className="text-center mb-16">
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
           <h2 className="text-3xl lg:text-4xl font-bold text-black mb-4">Kenapa Memilih Kami?</h2>
           <p className="text-gray-600">Lihat berbagai keunggulan yang kami tawarkan!</p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="text-center">
+          <motion.div
+            className="text-center"
+            initial={{ x: 20, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
             <div className="mb-4 flex justify-center">
               <Image
                 src="/icons/delivery.svg"
@@ -264,9 +351,15 @@ export default function Home() {
             <p className="text-gray-600 text-sm">
               Belanja hemat tanpa mikir ongkir, gratis ke seluruh area tertentu
             </p>
-          </div>
+          </motion.div>
 
-          <div className="text-center">
+          <motion.div
+            className="text-center"
+            initial={{ x: 20, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
             <div className="mb-4 flex justify-center">
               <Image
                 src="/icons/guarantee.svg"
@@ -280,9 +373,15 @@ export default function Home() {
             <p className="text-gray-600 text-sm">
               Cukup pesan hari ini, dan kami antar besok
             </p>
-          </div>
+          </motion.div>
 
-          <div className="text-center">
+          <motion.div
+            className="text-center"
+            initial={{ x: 20, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
             <div className="mb-4 flex justify-center">
               <Image
                 src="/icons/support.svg"
@@ -296,9 +395,15 @@ export default function Home() {
             <p className="text-gray-600 text-sm">
               Selalu sedia untuk melayani Anda kapan saja
             </p>
-          </div>
+          </motion.div>
 
-          <div className="text-center">
+          <motion.div
+            className="text-center"
+            initial={{ x: 20, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+          >
             <div className="mb-4 flex justify-center">
               <Image
                 src="/icons/wallet.svg"
@@ -312,26 +417,66 @@ export default function Home() {
             <p className="text-gray-600 text-sm">
               Dengan harga yang kompetitif untuk bisnis dan katering
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Promo Section */}
       <section className="container mx-auto px-5 py-16">
-        <div className="bg-[#71C454] rounded-2xl p-8 lg:p-16 text-white relative overflow-hidden">
+        <motion.div
+          className="bg-[#71C454] rounded-2xl p-8 lg:p-16 text-white relative overflow-hidden"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <div className="flex flex-col lg:flex-row items-center justify-between">
-            <div className="lg:w-[70%] mb-8 lg:mb-0 relative">
-              <h2 className="text-2xl lg:text-3xl font-bold text-center lg:text-left font-montserrat relative z-10">Discount 5%</h2>
-              <h3 className="text-4xl lg:text-7xl xl:text-9xl font-black lg:leading-15 xl:leading-25 text-center lg:text-left tracking-tighter font-montserrat relative z-10">
+            <motion.div
+              className="lg:w-[70%] mb-8 lg:mb-0 relative"
+              initial={{ x: -50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <motion.h2
+                className="text-2xl lg:text-3xl font-bold text-center lg:text-left font-montserrat relative z-10"
+                initial={{ y: 30, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+              >
+                Discount 5%
+              </motion.h2>
+              <motion.h3
+                className="text-4xl lg:text-7xl xl:text-9xl font-black lg:leading-15 xl:leading-25 text-center lg:text-left tracking-tighter font-montserrat relative z-10"
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
                 DAGING
                 <span className="hidden lg:inline"><br /></span>
                 <span className="inline lg:hidden"> </span>
                 RENDANG
                 <br />
                 & SEMUR
-              </h3>
-              <p className="text-2xl font-semibold mb-8 text-center lg:text-left font-montserrat relative z-10">9 Nov to 31 Dec</p>
-              <div className="lg:absolute lg:top-0 lg:right-0 lg:z-0">
+              </motion.h3>
+              <motion.p
+                className="text-2xl font-semibold mb-8 text-center lg:text-left font-montserrat relative z-10"
+                initial={{ y: 30, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+              >
+                9 Nov to 31 Dec
+              </motion.p>
+              <motion.div
+                className="lg:absolute lg:top-0 lg:right-0 lg:z-0"
+                initial={{ scale: 0.8, opacity: 0, rotate: -10 }}
+                whileInView={{ scale: 1, opacity: 1, rotate: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              >
                 <Image
                   src="/sapiku-banner.png"
                   alt="SapiKu Banner"
@@ -339,33 +484,81 @@ export default function Home() {
                   height={1000}
                   className="w-120 xl:w-172 mx-auto"
                 />
-              </div>
-            </div>
-            <div className="lg:w-[30%] text-center lg:text-left">
-              <h4 className="text-lg font-medium mb-2">Untuk Para Pelanggan Kami</h4>
-              <h5 className="text-3xl lg:text-5xl font-bold mb-4 tracking-tight">Pesta Akhir Tahun</h5>
-              <p className="text-base mb-6">
+              </motion.div>
+            </motion.div>
+            <motion.div
+              className="lg:w-[30%] text-center lg:text-left"
+              initial={{ x: 50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <motion.h4
+                className="text-lg font-medium mb-2"
+                initial={{ y: 20, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+              >
+                Untuk Para Pelanggan Kami
+              </motion.h4>
+              <motion.h5
+                className="text-3xl lg:text-5xl font-bold mb-4 tracking-tight"
+                initial={{ y: 30, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+              >
+                Pesta Akhir Tahun
+              </motion.h5>
+              <motion.p
+                className="text-base mb-6"
+                initial={{ y: 20, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5, delay: 0.7 }}
+              >
                 Buat moment akhir tahun kamu dan keluarga menjadi lebih bermakna bersama
                 SapiKu, Pusat Daging Murah Jakarta
-              </p>
-              <button className="bg-white text-red-500 px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors">
+              </motion.p>
+              <motion.button
+                className="bg-white text-red-500 px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors cursor-pointer"
+                initial={{ y: 20, opacity: 0, scale: 0.9 }}
+                whileInView={{ y: 0, opacity: 1, scale: 1 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 Pesan Sekarang
-              </button>
-            </div>
+              </motion.button>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Products Section */}
       <section className="container mx-auto px-5 py-16">
-        <div className="text-center mb-16">
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
           <h2 className="text-3xl lg:text-4xl font-bold text-black mb-4">Produk Terbaik Kami</h2>
           <p className="text-gray-600">Pilih produk-produk terbaik yang kami tawarkan!</p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
           {/* Product 1 */}
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg">
             <div className="relative">
               <Image
                 src="/product-1.png"
@@ -388,7 +581,7 @@ export default function Home() {
           </div>
 
           {/* Product 2 */}
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg">
             <div className="relative">
               <Image
                 src="/product-2.png"
@@ -411,7 +604,7 @@ export default function Home() {
           </div>
 
           {/* Product 3 */}
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg">
             <div className="relative">
               <Image
                 src="/product-3.png"
@@ -434,7 +627,7 @@ export default function Home() {
           </div>
 
           {/* Product 4 */}
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg">
             <div className="relative">
               <Image
                 src="/product-4.png"
@@ -452,7 +645,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+          {/* Product 5 */}
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg">
             <Image
               src="/product-5.png"
               alt="Daging Sliced Meat Teriyaki Fat 500 g"
@@ -466,7 +660,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+          {/* Product 6 */}
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg">
             <Image
               src="/product-6.png"
               alt="Tulangan Iga Sop Super 1 kg"
@@ -480,7 +675,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+          {/* Product 7 */}
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg">
             <Image
               src="/product-7.png"
               alt="Tulangan Iga Shortrib 1 kg (Konro Bakar)"
@@ -494,7 +690,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+          {/* Product 8 */}
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg">
             <Image
               src="/product-8.png"
               alt="Hati Sapi 1 kg"
@@ -508,7 +705,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+          {/* Product 9 */}
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg">
             <Image
               src="/product-9.png"
               alt="Varian Saus My Taste"
@@ -522,7 +720,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+          {/* Product 10 */}
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg">
             <Image
               src="/product-10.png"
               alt="Varian Saus Kikkoman"
@@ -536,7 +735,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+          {/* Product 11 */}
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg">
             <Image
               src="/product-11.png"
               alt="Udang Fresh 500 g"
@@ -550,7 +750,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+          {/* Product 12 */}
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg">
             <Image
               src="/product-12.png"
               alt="Cumi Ring 500 g"
@@ -563,21 +764,62 @@ export default function Home() {
               <span className="text-black font-bold">Rp50.000</span>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Final CTA Section */}
       <section className="container mx-auto px-5 py-16">
-        <div className="bg-[#E56F17] rounded-2xl p-8 lg:p-16 text-white relative overflow-hidden">
+        <motion.div
+          className="bg-[#E56F17] rounded-2xl p-8 lg:p-16 text-white relative overflow-hidden"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <div className="flex flex-col lg:flex-row items-center justify-between">
-            <div className="lg:w-1/3 mb-8 lg:mb-0">
-              <h2 className="text-2xl lg:text-3xl font-bold text-center lg:text-left font-montserrat">Gratis 100%</h2>
-              <h3 className="text-4xl lg:text-7xl xl:text-8xl font-black lg:leading-15 xl:leading-20 text-center lg:text-left tracking-tighter font-montserrat">
+            <motion.div
+              className="lg:w-1/3 mb-8 lg:mb-0"
+              initial={{ x: -50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <motion.h2
+                className="text-2xl lg:text-3xl font-bold text-center lg:text-left font-montserrat"
+                initial={{ y: 30, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+              >
+                Gratis 100%
+              </motion.h2>
+              <motion.h3
+                className="text-4xl lg:text-7xl xl:text-8xl font-black lg:leading-15 xl:leading-20 text-center lg:text-left tracking-tighter font-montserrat"
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
                 ONGKOS KIRIM
-              </h3>
-              <p className="text-2xl font-light mb-8 text-center lg:text-left font-montserrat">*Syarat & Ketentuan Berlaku</p>
-            </div>
-            <div className="mb-8 lg:w-1/3">
+              </motion.h3>
+              <motion.p
+                className="text-2xl font-light mb-8 text-center lg:text-left font-montserrat"
+                initial={{ y: 30, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+              >
+                *Syarat & Ketentuan Berlaku
+              </motion.p>
+            </motion.div>
+
+            <motion.div
+              className="mb-8 lg:w-1/3"
+              initial={{ y: -30, opacity: 0, scale: 0.9 }}
+              whileInView={{ y: 0, opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.7, delay: 0.4 }}
+            >
               <Image
                 src="/hero-bg.png"
                 alt="Background"
@@ -585,30 +827,79 @@ export default function Home() {
                 height={1000}
                 className="w-full max-w-md mx-auto"
               />
-            </div>
-            <div className="lg:w-1/3 text-center lg:text-left lg:ml-10">
-              <h4 className="text-lg font-medium mb-2">Untuk Para Pelanggan Kami</h4>
-              <h5 className="text-3xl lg:text-5xl font-bold mb-4 tracking-tight">Pesta Akhir Tahun</h5>
-              <p className="text-base mb-6">
+            </motion.div>
+
+            <motion.div
+              className="lg:w-1/3 text-center lg:text-left lg:ml-10"
+              initial={{ x: 50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <motion.h4
+                className="text-lg font-medium mb-2"
+                initial={{ y: 20, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+              >
+                Untuk Para Pelanggan Kami
+              </motion.h4>
+              <motion.h5
+                className="text-3xl lg:text-5xl font-bold mb-4 tracking-tight"
+                initial={{ y: 30, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+              >
+                Pesta Akhir Tahun
+              </motion.h5>
+              <motion.p
+                className="text-base mb-6"
+                initial={{ y: 20, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5, delay: 0.7 }}
+              >
                 Buat moment akhir tahun kamu dan keluarga menjadi lebih bermakna bersama
                 SapiKu, Pusat Daging Murah Jakarta
-              </p>
-              <button className="bg-white text-red-500 px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors">
+              </motion.p>
+              <motion.button
+                className="bg-white text-red-500 px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors cursor-pointer"
+                initial={{ y: 20, opacity: 0, scale: 0.9 }}
+                whileInView={{ y: 0, opacity: 1, scale: 1 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 Pesan Sekarang
-              </button>
-            </div>
+              </motion.button>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Blog Section */}
       <section className="container mx-auto px-5 py-16">
-        <div className="text-center mb-16">
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
           <h2 className="text-3xl lg:text-4xl font-bold text-black mb-4">Berita Update</h2>
           <p className="text-gray-600">Cermati artikel-artikel seputar peternakan sapi dan dunia daging!</p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <motion.div
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
           {/* Article 1 */}
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
             <Image
@@ -675,8 +966,7 @@ export default function Home() {
               <a href="#" className="text-white font-medium hover:underline">Read more →</a>
             </div>
           </div>
-
-        </div>
+        </motion.div>
       </section>
 
       {/* Footer */}
@@ -744,7 +1034,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Quick Links */}
+            {/* Links */}
             <div>
               <h4 className="text-lg font-bold text-black mb-4">Links</h4>
               <ul className="space-y-3">

@@ -554,7 +554,7 @@ export default function Home() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
-          viewport={{ once: true, amount: 0.1 }}
+          viewport={{ once: true, amount: 0.01 }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
           {/* Product 1 */}
@@ -986,7 +986,7 @@ export default function Home() {
               </div>
               <h3 className="text-lg font-semibold text-black mb-4">Pusat Daging Murah Jakarta</h3>
               <p className="text-gray-600 text-sm leading-relaxed mb-6 lg:pr-[50%]">
-                Sapiku.id adalah pusat daging sapi murah dan berkualitas di Jakarta, menyediakan daging segar, beku, hingga produk peternakan untuk kebutuhan harian dan hari besar Anda.
+                Sapiku adalah pusat daging sapi murah dan berkualitas di Jakarta, menyediakan daging segar, beku, hingga produk peternakan untuk kebutuhan harian dan hari besar Anda.
               </p>
 
               {/* Social Media */}
